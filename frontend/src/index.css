@@ -1,0 +1,85 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer components{
+
+  .section-title{
+    font-size: 24px;
+    @apply
+    font-semibold
+  }
+  .filter-tag{
+    @apply
+    px-3 py-1 rounded-full text-sm bg-gray-100
+  }
+  .card{
+    @apply
+      bg-white text-gray-700 w-72 min-h-[10rem]
+      shadow-md overflow-hidden rounded-md
+  }
+  .event-page-card{
+    @apply
+      bg-white text-gray-700
+      shadow-md overflow-hidden rounded-md
+  }
+
+  /* .info{
+    @apply
+    pl-2 py-1
+  } */
+
+  .event-title{
+    @apply
+    font-semibold text-2xl
+    overflow-ellipsis overflow-hidden whitespace-nowrap
+  }
+
+  .time{
+    @apply
+      px-3 py-1 rounded-full text-sm bg-gray-100
+  }
+
+  .button-primary{
+    @apply
+    bg-yellow-500/80 hover:bg-yellow-500/90
+    px-6 py-2 rounded-md text-white font-medium tracking-wider transition
+  }
+  .bookmark-button{
+    @apply
+    bg-green-500/80 hover:bg-green-500/90
+    px-2 py-2 rounded-md text-white font-medium tracking-wider transition 
+  }
+
+  .nav{
+    background-color: #2B293D;
+    font-size: 24px;
+    color: #FFE047;
+    @apply
+    shadow-sm text-white pl-4
+    
+  }
+  .footer{
+    background-color: #2B293D;
+  }
+
+  hr{
+    color: #FFE047;
+    background-color: #ffffff;
+  }
+
+  @keyframes fadeIn {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+.animate-fade-in {
+  animation: fadeIn 0.5s forwards;
+}
+
+
+}
