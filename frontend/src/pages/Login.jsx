@@ -39,8 +39,6 @@ const Login = () => {
         } else {
           navigate("/home", { state: { loggedIn: true } });
         }
-
-        window.location.reload();
       }
     } catch (error) {
       console.error("There was an error logging in!", error);
