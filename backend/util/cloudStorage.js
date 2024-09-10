@@ -1,12 +1,13 @@
 const { Storage } = require("@google-cloud/storage");
-const path = require("path");
 
 const storage = new Storage({
-  keyFilename: path.join(__dirname, "./second-scion-329017-832d12920ce3.json"),
-  projectId: "second-scion-329017",
+  credentials: {
+    client_email: process.env.GCLOUD_CLIENT_EMAIL, 
+    private_key: process.env.GCLOUD_PRIVATE_KEY.replace(/\\n/g, '\n'), 
+  },
 });
 
-const bucketName = "evently-app-images";
+const bucketName = process.env.GCLOUD_BUCKET_NAME; 
 const bucket = storage.bucket(bucketName);
 
 module.exports = bucket;
