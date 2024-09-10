@@ -30,10 +30,24 @@ function Home() {
       setIsLoggedIn(true);
     }
 
-    axios
-      .get("https://evently-0e9w.onrender.com/general/home-events")
-      .then((response) => setFeaturedEvents(response.data.events))
-      .catch((error) => console.error("Error fetching events:", error));
+    // axios
+    //   .get("https://evently-0e9w.onrender.com/general/home-events")
+    //   .then((response) => setFeaturedEvents(response.data.events))
+    //   .catch((error) => console.error("Error fetching events:", error));
+
+    // axios
+    //   .get("https://evently-0e9w.onrender.com/general/home-events")
+    //   .then((response) => setFeaturedEvents(response.data.events))
+    //   .catch((error) => console.error("Error fetching events:", error));
+    axios.get("https://evently-0e9w.onrender.com/general/home-events")
+    .then((response) => {
+      console.log("Events fetched:", response.data);
+      setFeaturedEvents(response.data.events);
+    })
+    .catch((error) => {
+      console.error("Error fetching events:", error);
+      setFeaturedEvents([]);  // Fallback value
+    });
   }, []);
 
   const handleEmailSubscription = async () => {
