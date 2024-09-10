@@ -38,6 +38,10 @@ mongoose
   .then(() => console.log("MongoDB is connected successfully"))
   .catch((err) => console.error(err));
 
+app.get("*", (req, res) => {
+  res.sendFile(path.join(__dirname, "public", "index.html"));
+});
+
 app.listen(6001, () => {
   console.log(`Server is listening on port 6001`);
 });
