@@ -22,7 +22,7 @@ const UserManagement = () => {
 
 
     axios
-      .get("http://localhost:6001/admin/users", {
+      .get("https://evently-0e9w.onrender.com/admin/users", {
         headers: { Authorization: `Bearer ${token}` },
       })
       .then((response) => setUsers(response.data.users))
@@ -30,7 +30,7 @@ const UserManagement = () => {
 
 
     axios
-      .get("http://localhost:6001/admin/organizer-requests", {
+      .get("https://evently-0e9w.onrender.com/admin/organizer-requests", {
         headers: { Authorization: `Bearer ${token}` },
       })
       .then((response) => setOrganizerRequests(response.data))
@@ -40,7 +40,7 @@ const UserManagement = () => {
 
 
     axios
-      .get("http://localhost:6001/admin/active-users-metrics", {
+      .get("https://evently-0e9w.onrender.com/admin/active-users-metrics", {
         headers: { Authorization: `Bearer ${token}` },
       })
       .then((response) => setActiveUsersMetrics(response.data))
@@ -50,7 +50,7 @@ const UserManagement = () => {
 
 
     axios
-      .get("http://localhost:6001/admin/user-growth-tracking", {
+      .get("https://evently-0e9w.onrender.com/admin/user-growth-tracking", {
         headers: { Authorization: `Bearer ${token}` },
       })
       .then((response) => setUserGrowth(response.data))
@@ -59,7 +59,7 @@ const UserManagement = () => {
       );
 
     axios
-      .get("http://localhost:6001/admin/emails", {
+      .get("https://evently-0e9w.onrender.com/admin/emails", {
         headers: { Authorization: `Bearer ${token}` },
       })
       .then((response) => setEmails(response.data))
@@ -70,7 +70,7 @@ const UserManagement = () => {
     const token = localStorage.getItem("token");
     try {
       await axios.put(
-        `http://localhost:6001/admin/manage-organizer-request/${id}`,
+        `https://evently-0e9w.onrender.com/admin/manage-organizer-request/${id}`,
         { status: "approved" },
         {
           headers: { Authorization: `Bearer ${token}` },
@@ -91,7 +91,7 @@ const UserManagement = () => {
     const token = localStorage.getItem("token");
     try {
       await axios.put(
-        `http://localhost:6001/admin/manage-organizer-request/${id}`,
+        `https://evently-0e9w.onrender.com/admin/manage-organizer-request/${id}`,
         { status: "rejected" },
         {
           headers: { Authorization: `Bearer ${token}` },

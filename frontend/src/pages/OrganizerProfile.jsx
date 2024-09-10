@@ -20,7 +20,7 @@ const ProfilePage = () => {
         const token = localStorage.getItem("token");
   
         const response = await axios.get(
-          "http://localhost:6001/organizer/profile",
+          "https://evently-0e9w.onrender.com/organizer/profile",
           {
             headers: {
               Authorization: `Bearer ${token}`,
@@ -59,7 +59,7 @@ const ProfilePage = () => {
     formData.append("photo", newProfileImage);
 
     axios
-      .put("http://localhost:6001/organizer/profile-picture", formData, {
+      .put("https://evently-0e9w.onrender.com/organizer/profile-picture", formData, {
         headers: {
           Authorization: `Bearer ${token}`,
           "Content-Type": "multipart/form-data",
@@ -80,7 +80,7 @@ const ProfilePage = () => {
       const token = localStorage.getItem("token");
 
       await axios.delete(
-        `http://localhost:6001/organizer/delete-event/${eventId}`,
+        `https://evently-0e9w.onrender.com/organizer/delete-event/${eventId}`,
         {
           headers: {
             Authorization: `Bearer ${token}`,

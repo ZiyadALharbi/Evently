@@ -30,7 +30,7 @@ function Events() {
     const fetchEvents = async () => {
       try {
         const response = await axios.get(
-          "http://localhost:6001/general/events",
+          "https://evently-0e9w.onrender.com/general/events",
           {
             params: { filter, sortBy },
           }

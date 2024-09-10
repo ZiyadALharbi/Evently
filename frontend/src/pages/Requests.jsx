@@ -20,7 +20,7 @@ const RequestPage = () => {
         const token = localStorage.getItem("token");
 
         const response = await axios.get(
-          `http://localhost:6001/organizer/show-requests/${eventId}`,
+          `https://evently-0e9w.onrender.com/organizer/show-requests/${eventId}`,
           {
             headers: {
               Authorization: `Bearer ${token}`,
@@ -47,7 +47,7 @@ const RequestPage = () => {
       const token = localStorage.getItem("token");
 
       await axios.put(
-        `http://localhost:6001/organizer/update-request/${requestId}`,
+        `https://evently-0e9w.onrender.com/organizer/update-request/${requestId}`,
         { status },
         {
           headers: {
@@ -57,7 +57,7 @@ const RequestPage = () => {
       );
 
       const updatedRequests = await axios.get(
-        `http://localhost:6001/organizer/show-requests/${eventId}`,
+        `https://evently-0e9w.onrender.com/organizer/show-requests/${eventId}`,
         {
           headers: {
             Authorization: `Bearer ${token}`,

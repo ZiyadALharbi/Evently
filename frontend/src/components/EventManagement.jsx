@@ -46,17 +46,17 @@ const EventManagement = () => {
         setError("");
 
         const eventRequests = await axios.get(
-          "http://localhost:6001/admin/event-requests",
+          "https://evently-0e9w.onrender.com/admin/event-requests",
           { headers: { Authorization: `Bearer ${token}` } }
         );
 
         const performance = await axios.get(
-          "http://localhost:6001/admin/event-performance-insights",
+          "https://evently-0e9w.onrender.com/admin/event-performance-insights",
           { headers: { Authorization: `Bearer ${token}` } }
         );
 
         const popular = await axios.get(
-          "http://localhost:6001/admin/popular-events-tracking",
+          "https://evently-0e9w.onrender.com/admin/popular-events-tracking",
           { headers: { Authorization: `Bearer ${token}` } }
         );
 
@@ -86,7 +86,7 @@ const EventManagement = () => {
 
     try {
       await axios.put(
-        `http://localhost:6001/admin/approve-event/${id}`,
+        `https://evently-0e9w.onrender.com/admin/approve-event/${id}`,
         { approved: true },
         { headers: { Authorization: `Bearer ${token}` } }
       );
@@ -103,7 +103,7 @@ const EventManagement = () => {
 
     try {
       await axios.put(
-        `http://localhost:6001/admin/approve-event/${id}`,
+        `https://evently-0e9w.onrender.com/admin/approve-event/${id}`,
         { approved: false },
         { headers: { Authorization: `Bearer ${token}` } }
       );

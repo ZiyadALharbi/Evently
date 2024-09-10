@@ -21,7 +21,7 @@ const StudentProfilePage = () => {
     }
 
     axios
-    .get("http://localhost:6001/student/profile", {
+    .get("https://evently-0e9w.onrender.com/student/profile", {
       headers: { Authorization: `Bearer ${token}` },
     })
     .then((response) => {
@@ -33,14 +33,14 @@ const StudentProfilePage = () => {
     .catch((error) => console.error("Error fetching profile:", error));
   
     axios
-      .get("http://localhost:6001/student/requests", {
+      .get("https://evently-0e9w.onrender.com/student/requests", {
         headers: { Authorization: `Bearer ${token}` },
       })
       .then((response) => setRequests(response.data))
       .catch((error) => console.error("Error fetching requests:", error));
 
     axios
-      .get("http://localhost:6001/student/bookmarks", {
+      .get("https://evently-0e9w.onrender.com/student/bookmarks", {
         headers: { Authorization: `Bearer ${token}` },
       })
       .then((response) => setBookmarks(response.data))
@@ -51,7 +51,7 @@ const StudentProfilePage = () => {
     const token = localStorage.getItem("token");
 
     axios
-      .delete(`http://localhost:6001/student/cancel-request/${id}`, {
+      .delete(`https://evently-0e9w.onrender.com/student/cancel-request/${id}`, {
         headers: { Authorization: `Bearer ${token}` },
       })
       .then(() => {
@@ -64,7 +64,7 @@ const StudentProfilePage = () => {
     const token = localStorage.getItem("token");
 
     axios
-      .delete(`http://localhost:6001/student/remove-bookmark/${id}`, {
+      .delete(`https://evently-0e9w.onrender.com/student/remove-bookmark/${id}`, {
         headers: { Authorization: `Bearer ${token}` },
       })
       .then(() => {
@@ -87,7 +87,7 @@ const StudentProfilePage = () => {
     formData.append("photo", newProfileImage);
 
     axios
-      .put("http://localhost:6001/student/profile-picture", formData, {
+      .put("https://evently-0e9w.onrender.com/student/profile-picture", formData, {
         headers: {
           Authorization: `Bearer ${token}`,
           "Content-Type": "multipart/form-data",

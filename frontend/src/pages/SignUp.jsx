@@ -44,7 +44,7 @@ function SignUp() {
 
     try {
       const response = await axios.post(
-        "http://localhost:6001/auth/signup",
+        "https://evently-0e9w.onrender.com/auth/signup",
         formDataToSend,
         {
           headers: {

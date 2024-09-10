@@ -28,7 +28,7 @@ const EditEventPage = () => {
     const fetchEventData = async () => {
       try {
         const response = await axios.get(
-          `http://localhost:6001/organizer/event/${eventId}`,
+          `https://evently-0e9w.onrender.com/organizer/event/${eventId}`,
           {
             headers: {
               Authorization: `Bearer ${token}`,
@@ -125,7 +125,7 @@ const EditEventPage = () => {
 
     try {
       await axios.put(
-        `http://localhost:6001/organizer/edit-event/${eventId}`,
+        `https://evently-0e9w.onrender.com/organizer/edit-event/${eventId}`,
         formData,
         {
           headers: {
@@ -136,7 +136,7 @@ const EditEventPage = () => {
       );
 
       if (selectedImageFile && oldImage) {
-        await axios.delete(`http://localhost:6001/organizer/delete-image`, {
+        await axios.delete(`https://evently-0e9w.onrender.com/organizer/delete-image`, {
           data: { imageUrl: oldImage },
           headers: {
             Authorization: `Bearer ${token}`,

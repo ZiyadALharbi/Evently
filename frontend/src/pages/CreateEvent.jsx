@@ -116,7 +116,7 @@ const CreateEvent = () => {
       });
   
       const response = await axios.post(
-        "http://localhost:6001/organizer/create-event",
+        "https://evently-0e9w.onrender.com/organizer/create-event",
         data,
         {
           headers: {

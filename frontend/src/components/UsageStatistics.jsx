@@ -29,7 +29,7 @@ const UsageStatistics = () => {
     const token = localStorage.getItem("token");
 
     axios
-      .get("http://localhost:6001/admin/usage-statistics", {
+      .get("https://evently-0e9w.onrender.com/admin/usage-statistics", {
         headers: { Authorization: `Bearer ${token}` },
       })
       .then((response) => {

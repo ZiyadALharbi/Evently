@@ -31,7 +31,7 @@ function Home() {
     }
 
     axios
-      .get("http://localhost:6001/general/home-events")
+      .get("https://evently-0e9w.onrender.com/general/home-events")
       .then((response) => setFeaturedEvents(response.data.events))
       .catch((error) => console.error("Error fetching events:", error));
   }, []);
@@ -44,7 +44,7 @@ function Home() {
 
     try {
       const response = await axios.post(
-        "http://localhost:6001/general/subscribe",
+        "https://evently-0e9w.onrender.com/general/subscribe",
         {
           email,
         }

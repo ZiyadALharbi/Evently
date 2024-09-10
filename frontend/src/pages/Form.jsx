@@ -12,7 +12,7 @@ function Form() {
 
   useEffect(() => {
     axios
-      .get(`http://localhost:6001/general/event/${eventId}`, {
+      .get(`https://evently-0e9w.onrender.com/general/event/${eventId}`, {
         headers: {
           Authorization: `Bearer ${token}`,
         },
@@ -37,7 +37,7 @@ function Form() {
 
     axios
       .post(
-        `http://localhost:6001/student/send-request/${eventId}`,
+        `https://evently-0e9w.onrender.com/student/send-request/${eventId}`,
         { answers },
         {
           headers: {

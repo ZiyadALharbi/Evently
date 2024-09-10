@@ -17,7 +17,7 @@ function EventPage() {
     const fetchEventData = async () => {
       try {
         console.log("Fetching event data for eventId:", eventId);  
-        const response = await axios.get(`http://localhost:6001/general/event/${eventId}`);
+        const response = await axios.get(`https://evently-0e9w.onrender.com/general/event/${eventId}`);
         console.log("Event data fetched:", response.data); 
         setEventData(response.data);
       } catch (error) {
@@ -42,7 +42,7 @@ function EventPage() {
     const token = localStorage.getItem("token");
     axios
       .post(
-        `http://localhost:6001/student/add-bookmark/${eventId}`,
+        `https://evently-0e9w.onrender.com/student/add-bookmark/${eventId}`,
         {},
         {
           headers: {

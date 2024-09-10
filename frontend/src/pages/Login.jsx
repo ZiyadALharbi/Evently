@@ -21,7 +21,7 @@ const Login = () => {
     e.preventDefault();
     try {
       const response = await axios.post(
-        "http://localhost:6001/auth/login",
+        "https://evently-0e9w.onrender.com/auth/login",
         formData
       );
 
