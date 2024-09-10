@@ -5,7 +5,7 @@ const mongoose = require("mongoose");
 const cors = require("cors");
 const cookieParser = require("cookie-parser");
 const app = express();
-const path = require("path");
+
 
 app.use(
   cors({
@@ -17,7 +17,7 @@ app.use(
 
 app.use(cookieParser());
 app.use(express.json());
-app.use(express.static(path.join(__dirname, "public")));
+
 
 const authRoutes = require("./routes/auth_routes.js");
 const organizerRoutes = require("./routes/organizer_routes.js");
@@ -37,10 +37,6 @@ mongoose
   )
   .then(() => console.log("MongoDB is connected successfully"))
   .catch((err) => console.error(err));
-
-app.get("*", (req, res) => {
-  res.sendFile(path.join(__dirname, "frontend", "index.html"));
-});
 
 app.listen(6001, () => {
   console.log(`Server is listening on port 6001`);
