@@ -14,7 +14,7 @@ import {
   HiOutlineClipboardCheck,
   HiOutlineLibrary,
 } from "react-icons/hi";
-import DefaultPic from "/Users/ziyadalharbi/EVENT/frontend/src/assets/wallhaven-3lepy9.jpg";
+import DefaultPic from "/Users/ziyadalharbi/EVENT/frontend/src/assets/KFUPM-PIC.png";
 import Footer from "../components/Footer.jsx";
 
 function Home() {
