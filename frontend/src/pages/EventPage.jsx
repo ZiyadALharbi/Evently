@@ -1,11 +1,15 @@
 import React, { useEffect, useState } from "react";
 import { useParams, useNavigate } from "react-router-dom";
 import axios from "axios";
-import { HiOutlineLocationMarker, HiOutlineClock, HiOutlineBookmark } from "react-icons/hi";
+import {
+  HiOutlineLocationMarker,
+  HiOutlineClock,
+  HiOutlineBookmark,
+} from "react-icons/hi";
 import moment from "moment";
 import Footer from "../components/Footer.jsx";
-import DefaultPic from "../assets/wallhaven-3lepy9.jpg";  
-import Profile from "../assets/profile.png"; 
+import DefaultPic from "../assets/wallhaven-3lepy9.jpg";
+import Profile from "../assets/profile.png";
 
 function EventPage() {
   const { eventId } = useParams();
@@ -16,12 +20,14 @@ function EventPage() {
   useEffect(() => {
     const fetchEventData = async () => {
       try {
-        console.log("Fetching event data for eventId:", eventId);  
-        const response = await axios.get(`https://evently-0e9w.onrender.com/general/event/${eventId}`);
-        console.log("Event data fetched:", response.data); 
+        console.log("Fetching event data for eventId:", eventId);
+        const response = await axios.get(
+          `https://evently-0e9w.onrender.com/general/event/${eventId}`
+        );
+        console.log("Event data fetched:", response.data);
         setEventData(response.data);
       } catch (error) {
-        console.error("Error fetching event data:", error);  
+        console.error("Error fetching event data:", error);
         setMessage({
           type: "error",
           text: "Failed to fetch event data. Please try again later.",
@@ -75,11 +81,11 @@ function EventPage() {
       <div className="min-h-screen bg-gray-50 py-12">
         <div className="container mx-auto px-6">
           {/* Event Image */}
-          <div className="relative w-full h-64 md:h-96 rounded-lg overflow-hidden shadow-md">
+          <div className="relative w-full pb-[56.25%] rounded-lg overflow-hidden shadow-md">
             <img
               src={eventData.eventImage || DefaultPic}
               alt="Event"
-              className="w-full h-full object-cover"
+              className="absolute top-0 left-0 w-full h-full object-cover"
             />
             <div className="absolute bottom-0 left-0 bg-gradient-to-t from-black/70 to-transparent p-4 w-full">
               <h1 className="text-3xl font-bold text-white">
@@ -102,7 +108,9 @@ function EventPage() {
                 <div className="flex items-center mb-6">
                   <HiOutlineClock className="h-6 w-6 text-teal-500 mr-2" />
                   <span className="text-lg text-gray-700">
-                    {formattedDate} | {eventData.duration?.startTime || "8:00pm"} - {eventData.duration?.endTime || "10:30pm"}
+                    {formattedDate} |{" "}
+                    {eventData.duration?.startTime || "8:00pm"} -{" "}
+                    {eventData.duration?.endTime || "10:30pm"}
                   </span>
                 </div>
 
@@ -160,7 +168,9 @@ function EventPage() {
 
               {/* Notes Section in Right Column */}
               <div className="bg-white rounded-lg shadow-lg p-8 transition-all duration-300 transform hover:scale-105 ">
-                <h4 className="text-lg font-semibold text-gray-700 mb-4">Notes:</h4>
+                <h4 className="text-lg font-semibold text-gray-700 mb-4">
+                  Notes:
+                </h4>
                 {eventData.notes && eventData.notes.length > 0 ? (
                   <ul className="list-disc pl-6 space-y-2">
                     {eventData.notes.map((note, index) => (
@@ -198,4 +208,3 @@ function EventPage() {
 }
 
 export default EventPage;
-
